@@ -65,6 +65,14 @@ function Board() {
 }
 
 function Game() {
+  const [history, setHistory] = useLocalStorageState('tic-tac-toe:history', [
+    Array(9).fill(null),
+  ])
+  const [currentStep, setCurrentStep] = useLocalStorageState(
+    'tic-tac-toe:step',
+    0,
+  )
+
   return (
     <div className="game">
       <div className="game-board">
